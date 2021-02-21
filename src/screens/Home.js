@@ -7,11 +7,13 @@ export default function Home(props) {
   return (
     <View>
       <Text>Estamos en Home</Text>
+
       <Button title="Ir a about" onPress={() => navigation.navigate('about')} />
       <Button
         title="Ir a Contact"
         onPress={() => navigation.navigate('contact')}
       />
+      <Button title='Ir a cursos' onPress={()=> navigation.navigate('contact', {screen: 'courses'})}/>
     </View>
   );
 }
