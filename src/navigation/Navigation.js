@@ -1,21 +1,26 @@
 import React from 'react';
-import About from '../screens/About';
-import Contact from '../screens/Contact';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {StyleSheet} from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeStack from './HomeStack';
-import ContactStack from './ContactStack'
+import ContactStack from './ContactStack';
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function Navigation() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="home" component={HomeStack} options={{title: 'Home'}} />
-      <Tab.Screen
+    <Drawer.Navigator initialRouteName="home">
+      <Drawer.Screen
+        name="home"
+        component={HomeStack}
+        options={{title: 'Home'}}
+      />
+      <Drawer.Screen
         name="contact"
         component={ContactStack}
         options={{title: 'Contact'}}
       />
-    </Tab.Navigator>
+    </Drawer.Navigator>
   );
 }
+
+const styles = StyleSheet.create({});
